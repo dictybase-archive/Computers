@@ -10,6 +10,10 @@ Everything about installations/issues on Linux and Mac OS X.
 	* [Development](#de)
 		* [Perl related](#pere)
 		* [Others](#ot)
+			* [npm & node.js](#bib_mess)
+			* [Web development](#web_dev)
+			* [Ruby on Rails](#ruby_on_rails)
+			
 	* [Database related](#darela)
 	
 
@@ -177,6 +181,7 @@ PROBLEMS here: I decided to install node from the web and I screwed it up> I did
 * `rm -rf /Users/[homedir]/.npm`
 
 
+<a name="web_dev"/>
 #### Web development
 
 - I TRIED to install Gumby framework (a grid system application for web design):
@@ -192,6 +197,16 @@ modular-scale-2.0.5
 	- Documentation for modular-scale-2.0.5
 - sass-3.3.5
 	- Documentation for sass-3.3.5
+
+
+
+<a name="ruby_on_rails"/>
+#### Ruby on Rails
+These are the useful resources that I followed to become familiar with Ruby on Rails:
+
+* [What is Ruby on Rails?](http://railsapps.github.io/what-is-ruby-rails.html)
+* [Installing Ruby on Rails on Mac OS X Mavericks](http://railsapps.github.io/installrubyonrails-mac.html): review the advices in this article just in case.
+
 	
 
 <a name="darela"/>
