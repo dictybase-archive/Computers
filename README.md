@@ -204,8 +204,19 @@ modular-scale-2.0.5
 #### Ruby on Rails
 These are the useful resources that I followed to become familiar with Ruby on Rails:
 
+##### Manuals/Tutorials/Videos
 * [What is Ruby on Rails?](http://railsapps.github.io/what-is-ruby-rails.html)
 * [Installing Ruby on Rails on Mac OS X Mavericks](http://railsapps.github.io/installrubyonrails-mac.html): review the advices in this article just in case.
+
+##### Ruby installation, configuration, management
+Following Sidd recommendations, I will manage ruby using rbenv. I basically followed their [instructions](https://github.com/sstephenson/rbenv). Check the README file on the github project `dictyconference` [develop branch](https://github.com/dictyBase/dictyconference/blob/develop/README.md) for more details.
+
+Useful `rbenv` commands:
+* `rbenv install -l`
+
+
+
+
 
 	
 
