@@ -4,8 +4,9 @@ Computers
 Everything about installations/issues on Linux and Mac OS X.
 
 
-* [Installation on the Mac](#inon)
-	* [General](#ge)
+* [Mac OS X](#inon)
+	* [Problems related to Mac OS X](#macpro) 
+	* [General Installations](#ge)
 	* [Virtual Machines](#vm)
 	* [Development](#de)
 		* [Perl related](#pere)
@@ -13,15 +14,19 @@ Everything about installations/issues on Linux and Mac OS X.
 			* [npm & node.js](#bib_mess)
 			* [Web development](#web_dev)
 			* [Ruby on Rails](#ruby_on_rails)
-			
 	* [Database related](#darela)
 	
 
 <a name="inon"/>
+# Mac OS X
 
-# The Mac OS X
+<a name="macpro"/>
+## Mayor problems with Mac OS X 10.9 (Mavericks)
 
-Compilation of all the installations on a Mac OS X 10.9 (Mavericks).
+- 10/14/2014: The File System Check fails and the operating system must be reinstalled in a brand new laptop (6 months old). The recommendation at the Apple Store is to uncheck automatic updates for the operating system (System Preferences > Apple Store > uncheck automatic updates).
+
+<a name="macpro">
+# Installations
 
 <a name="ge"/>
 ## General
