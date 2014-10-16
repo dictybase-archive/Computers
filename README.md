@@ -23,7 +23,19 @@ Everything about installations/issues on Linux and Mac OS X.
 <a name="macpro"/>
 ## Mayor problems with Mac OS X 10.9 (Mavericks)
 
-- 10/14/2014: The File System Check fails and the operating system must be reinstalled in a brand new laptop (6 months old). The recommendation at the Apple Store is to uncheck automatic updates for the operating system (System Preferences > Apple Store > uncheck automatic updates).
+10/14/2014: The File System Check fails and the operating system must be reinstalled in a brand new laptop (6 months old). The recommendation at the Apple Store is to uncheck automatic updates for the operating system (System Preferences > Apple Store > uncheck automatic updates).
+
+These are the steps to follow after a recovery from Time Machine.
+
+   * As recommended in the Apple Store, before even creating any user, the migration from the Time Machine disk is the first thing to do. The procedure followed here is different, and they first create your user name. The problem was that when running the "migration assistant", it detects that the user name already exists and duplicates the home folder, i.e., if `someuser` already exists, time machine creates `someuser 1`. So be extremely careful
+   
+   * Google Drive does not recognize the old folder and ask you to resync it to a new location.
+   * Github: I prefer to clone everything again from github to avoid possible conflicts.
+   * Applications:
+      The applications that are gone after getting back the system are: node (and npm), rbenv
+      * __Re installations__:
+        * Update brew
+        * rm -rf .rbenv/; 
 
 <a name="macpro">
 # Installations
