@@ -25,6 +25,8 @@ Everything about installations/issues on Linux and Mac OS X.
 
 10/14/2014: The File System Check fails and the operating system must be reinstalled in a brand new laptop (6 months old). The recommendation at the Apple Store is to uncheck automatic updates for the operating system (System Preferences > Apple Store > uncheck automatic updates).
 
+10/16/2014: The computer is not working properly. It has two `lost+found` folders, two `opt` folders, the fan is in full blast mode most of the time (which never ever happened before the crash), it takes too long to delete folders, too long to install anything. I reported all these problems. It is gonna required re-installing everything one more time.
+
 These are the steps to follow after a recovery from Time Machine.
 
    * As recommended in the Apple Store, before even creating any user, the migration from the Time Machine disk is the first thing to do. The procedure followed here is different, and they first create your user name. The problem was that when running the "migration assistant", it detects that the user name already exists and duplicates the home folder, i.e., if `someuser` already exists, time machine creates `someuser 1`. So be extremely careful
@@ -34,8 +36,14 @@ These are the steps to follow after a recovery from Time Machine.
    * Applications:
       The applications that are gone after getting back the system are: node (and npm), rbenv
       * __Re installations__:
-        * Update brew
-        * rm -rf .rbenv/; 
+        * XCode command line tools again. There was problem compiling, I am assuming this was the problem because then it worked
+        * Update brew: brew update; brew doctor; brew prune
+        * `rm -rf .rbenv/`; `git clone https://github.com/sstephenson/rbenv.git ~/.rbenv`; `git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build` (to add the option install to `rbenv`); 
+          * `gem install rails` for each version generates a problem with permissions.
+        * Git: Install command line tools
+        * OS X bash Update (manually again)
+
+
 
 <a name="macpro">
 # Installations
