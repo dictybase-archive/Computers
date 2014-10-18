@@ -37,10 +37,8 @@ These are the steps to follow after a recovery from Time Machine.
         * XCode command line tools again. 
         * Update BREW: brew update; brew doctor; brew prune
         * RUBY: 
-
 		
 		rm -rf .rbenv/
-
     	git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
     	git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build (to add the option install to rbenv)
     	Test it by: rbenv install 1.9.3-p429 
@@ -48,6 +46,20 @@ These are the steps to follow after a recovery from Time Machine.
 
    * `gem install rails` or `gem install rails --no-ri --no-rdoc` for each version It might generate a problem with permissions (depending on possible problems with the `libyaml` library)
    * OS X bash Update (manually again)
+   * NODE:
+
+		rm -rf .node-gyp
+		rm -rf .npm
+		brew remove --force node
+		brew install node
+		npm install -g yo grunt-cli bower
+		npm install -g bower-config
+
+   * PERL:
+
+
+
+
 
 
 
