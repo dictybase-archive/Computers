@@ -55,12 +55,9 @@ These are the steps to follow after a recovery from Time Machine.
 		npm install -g yo grunt-cli bower
 		npm install -g bower-config
 
-   * PERL:
+   * PERL: problem with the oracle driver solved. I just had to restore the ~/opt folder from Time Machine.
 
-
-
-
-
+   * Virtual Box: solving problem with "Kernel driver not installed (rc=-1908)". I solved it by installing an updated version of virtual box.
 
 
 <a name="macpro">
