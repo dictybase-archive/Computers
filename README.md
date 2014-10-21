@@ -54,6 +54,7 @@ These are the steps to follow after a recovery from Time Machine.
 		brew install node
 		npm install -g yo grunt-cli bower
 		npm install -g bower-config
+		npm install -g jshint (and Sublime-JSHint Gutter)
 
    * PERL: problem with the oracle driver solved. I just had to restore the ~/opt folder from Time Machine.
 
