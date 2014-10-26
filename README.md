@@ -1,9 +1,10 @@
 Computers
 =========
 
-Everything about installations/issues on Linux and Mac OS X.
+___Everything about installations/issues/configurations on computers or related___
 
-
+* [Travis CI](#travis)
+	* [AngularJS](#angular) 
 * [Mac OS X](#inon)
 	* [Problems related to Mac OS X](#macpro) 
 	* [General Installations](#ge)
@@ -16,6 +17,29 @@ Everything about installations/issues on Linux and Mac OS X.
 			* [Ruby on Rails](#ruby_on_rails)
 	* [Database related](#darela)
 	
+<a name="travis">
+# Travis CI
+Travis CI is a hosted continuous integration service. It is integrated with GitHub and offers first class support for a lot of different languages.
+
+<a name="angular">
+## Angular project
+
+For illustration purposes, this description will be based on the dictyBase project [dictyHeaderFooter-Angular-Directive](https://github.com/dictyBase/dictyHeaderFooter-Angular-Directive).
+
+In this project the standard yeoman generator-angular is used to build the angular directives for the footer and header of the next dictyBase. The default task manager is `Grunt` for the yeoman project. In order to make it work on PhantomJS and Firefox, this is the specifications that has to be included in the `.travis.yml` configuration file:
+
+* `.travis.yml`
+
+		before_script:
+		  - npm install -g grunt-cli
+		  - npm install -g bower
+		  - npm install -g karma
+		  // PhantomJS
+		  - npm install karma-phantomjs-launcher -save-dev
+		  - bower install
+		  // Next, for Firefox to work on Travis:
+		  - "export DISPLAY=:99.0"
+		  - "sh -e /etc/init.d/xvfb start"
 
 <a name="inon"/>
 # Mac OS X
