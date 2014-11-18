@@ -265,22 +265,6 @@ PROBLEMS here: I decided to install node from the web and I screwed it up> I did
 <a name="web_dev"/>
 #### Web development
 
-- I TRIED to install Gumby framework (a grid system application for web design):
-	- Install RVM, the Ruby Version Manager.
-	- curl -L https://get.rvm.io | bash -s stable --ruby
-	- Install gem dependencies (Gumby utilizes modular-scale, Compass and Sass)
-sass-3.2.19
-	- chunky_png-1.3.0
-	- fssm-0.2.10
-		- compass-0.12.5.gem (100%)
- 	- Done installing documentation for chunky_png, compass, fssm, sass
-modular-scale-2.0.5
-	- Documentation for modular-scale-2.0.5
-- sass-3.3.5
-	- Documentation for sass-3.3.5
-
-
-
 <a name="ruby_on_rails"/>
 #### Ruby on Rails
 These are the useful resources that I followed to become familiar with Ruby on Rails:
@@ -311,6 +295,9 @@ rake db:create
 rake db:migrate
 ```
 
+#### Useful Tools for web development
+
+* [Webpack](http://webpack.github.io/docs/what-is-webpack.html): `npm install -g webpack`
 
 
 <a name="darela"/>
