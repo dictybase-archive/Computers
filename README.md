@@ -17,11 +17,11 @@ ___Everything about installations/issues/configurations on computers or related_
 			* [Ruby on Rails](#ruby_on_rails)
 	* [Database related](#darela)
 	
-<a name="travis">
+<a name="travis"></a>
 # Travis CI
 Travis CI is a hosted continuous integration service. It is integrated with GitHub and offers first class support for a lot of different languages.
 
-<a name="angular">
+<a name="angular"></a>
 ## Angular project
 
 For illustration purposes, this description will be based on the dictyBase project [dictyHeaderFooter-Angular-Directive](https://github.com/dictyBase/dictyHeaderFooter-Angular-Directive).
