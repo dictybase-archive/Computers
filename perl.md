@@ -1,9 +1,15 @@
 PERL ON DICTY
 ===
 
-Absolutely avoid using Perl from the Mac OS X system.
+* [Perlbrew](#perlbrew)
+* [Perl Packages](#packages)
+* [Modware-Loader development](#modware)
+* 
 
-Use `perlbrew` to manage Perl versions and libraries. 
+<a name="perlbrew"/>
+# Perlbrew
+
+Absolutely avoid using Perl from the Mac OS X system. Instead, use `perlbrew` to manage Perl versions and libraries. 
 
 Steps to install and use it (based on the [cpan site](http://search.cpan.org/~gugod/App-perlbrew-0.67/lib/App/perlbrew.pm))
 
@@ -19,7 +25,7 @@ Steps to install and use it (based on the [cpan site](http://search.cpan.org/~gu
     * perlbrew switch perl-5.12.2
     
     Perl version installed: 
-    - perl-5.18.2
+    - perl-5.18.4
   	- perl-5.19.11
   	- etc
 ```
@@ -49,13 +55,17 @@ The message `lib 'perl-5.19.11@ejemplo' is created.` is prompted, which specify 
 	/Users/djt469/perl5/lib/perl5    
 	```
 
-* Install a package, eg:`cpanm Acme::Time::Baby`
-* Test that it works only in this shell: `perl -MAcme::Time::Baby -E 'say babytime'` if you try in other shells, with the other libraries, it won't work.
-	
+* Testing: Install a package and test that it works:
+
+```
+cpanm Acme::Time::Baby
+perl -MAcme::Time::Baby -E 'say babytime'
+```
+
 In conclusion: `perlbrew` helps you managing the libraries for every particular project and according to some particular perl version. It helps managing `local::lib` for you. Otherwise, you would need to do almost everything by hand and the libraries would have to be installed in a folder `lib` in your `project` directory. 
 	
-
-#### Perl Packages
+<a name="packages"/>
+# Perl Packages
 Use `cpanm`, but associated to every perl version that you are managing with `perlbrew`, as explained above. Anyway, it is better to install the packages locally in your home directory. 
 
 Some useful perl packages that you can install using `cpanm <package>`
@@ -71,3 +81,34 @@ Some useful perl packages that you can install using `cpanm <package>`
 * Perl Object Oriented related
 	- `Moose`
 	- `Moose::Manual`
+
+<a name="modware"/>
+# Modware-Loader development
+
+`Modware-loader` is based on `MooseX::App:Cmd` to provide command line applications to import and export biological data from Chado database. `MooseX::App:Cmd` combines `MooseX::Getopt` and `App::Cmd`. 
+
+## Tutorials & Documentation
+
+* `App::Cmd::Tutorial` --> getting started with `App::Cmd`.
+
+## Installations
+
+* Install different versions of Perl. The lowest version I could install is perl-5.16.3
+* Modware Installation:
+    * Developers
+        * Create library `perl-5.18.4@modwareDeveloper`
+        * cpanm modules:
+```
+cpanm -n Devel::Loaded
+cpanm -n DBI
+cpanm -n DBD::Oracle DBD::Pg
+cpanm git://github.com/dictyBase/Test-Chado.git
+cpanm -n Test::File Test::Moose Test::Roo
+```
+    * Standalone
+        - Create library `perl-5.18.4@modware-standalone`
+```
+cpanm -n Modware-Loader-v1.6.1.tar.gz
+cpanm -n XML::LibXML
+cpanm -n XML::LibXSLT
+```
