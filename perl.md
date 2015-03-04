@@ -103,7 +103,7 @@ cpanm -n Devel::Loaded
 cpanm -n DBI
 cpanm -n DBD::Oracle DBD::Pg
 cpanm git://github.com/dictyBase/Test-Chado.git
-cpanm -n Test::File Test::Moose Test::Roo
+cpanm -n Test::File Test::Moose Test::RooT
 ```
     * Standalone
         - Create library `perl-5.18.4@modware-standalone`
@@ -111,4 +111,5 @@ cpanm -n Test::File Test::Moose Test::Roo
 cpanm -n Modware-Loader-v1.6.1.tar.gz
 cpanm -n XML::LibXML
 cpanm -n XML::LibXSLT
+cpanm -n DBD::Oracle 
 ```
