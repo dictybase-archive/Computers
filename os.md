@@ -84,6 +84,10 @@ These are the steps to follow after a recovery from Time Machine.
 
 ---
 
+<a name="docker">
+# Docker
+- [Kitematic](https://kitematic.com/): the app to use Docker on the Mac 
+
 <a name="vm"/>
 # Virtual Machines
 List of virtual machines available in my box
