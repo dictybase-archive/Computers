@@ -4,7 +4,6 @@ PERL ON DICTY
 * [Perlbrew](#perlbrew)
 * [Perl Packages](#packages)
 * [Modware-Loader development](#modware)
-* 
 
 <a name="perlbrew"/>
 # Perlbrew
