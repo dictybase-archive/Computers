@@ -8,7 +8,7 @@ PERL ON DICTY
 <a name="perlbrew"/>
 # Perlbrew
 
-Absolutely avoid using Perl from the Mac OS X system. Instead, use `perlbrew` to manage Perl versions and libraries. 
+Avoid using `Perl` from the Mac OS X system. Instead, use `perlbrew` to manage Perl versions and libraries. 
 
 Steps to install and use it (based on the [cpan site](http://search.cpan.org/~gugod/App-perlbrew-0.67/lib/App/perlbrew.pm))
 
@@ -29,13 +29,13 @@ Steps to install and use it (based on the [cpan site](http://search.cpan.org/~gu
   	- etc
 ```
 
-* `cpanm`: Once `perlbrew` is installed, is absolutely essential to install `cpanm` running `perlbrew install-cpanm`. Use it to install libraries 
+* `cpanm`: Once `perlbrew` is installed, is essential to install `cpanm` running `perlbrew install-cpanm`. Use it to install libraries 
 
 Now, to install `cpanm libraries` there exist two possibilities:
 
 1. In your `home` available to any Perl project. Then just run `cpanm <package>`
 
-2. Create specific libraries for every project. This is done with `local::lib` which is the package that allows the possibility of managing library packages for a particular project. But the way to install and use `local::lib` is through `cpanm`. **Follow these steps to make sure you are doing the right thing**:
+2. Create specific libraries for every project. This is done with `local::lib` which is the package that allows the possibility of managing library packages for a particular project. But the way to install and use `local::lib` is through `perlbrew`. **Follow these steps to make sure you are doing the right thing**:
 
 * First, make sure that `cpanm` is installed on the system (if you do, `brew remove cpanm`)
 * `perl -V` tells you which perl version and libraries you are using.
