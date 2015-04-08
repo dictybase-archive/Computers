@@ -119,9 +119,11 @@ gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY.art.txt
 ### Old scripts and libraries
 
 Both prod and test:
-    /usr/local/dicty/lib/dicty/S
-    /usr/local/dicty/patches
 
+```shell
+/dicty/lib/dicty/S
+/dicty/patches
+```
 
 <a name="mfp"/>
 # Most Frequent Problems
