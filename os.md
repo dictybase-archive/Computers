@@ -100,5 +100,6 @@ List of virtual machines available in my box
 
 ## Vagrant
 
+
 <a name="linux">
 # Linux
