@@ -6,6 +6,8 @@ dicty-SYSTEM ADMINISTRATION
 - [Maintenance](#maintenance)
     + [Updates](#updates)
 - [Most Frequent Problems](#mfp)
+    + [Error: Software caused connection abort](#connectionabort)
+    + [Error: deleting cache in Curation Central](#deletingcache)
 
 ---
 
@@ -127,7 +129,8 @@ Both prod and test:
 
 <a name="mfp"/>
 # Most Frequent Problems
-   
+
+<a name="connectionabort"/>
 ### Error: Software caused connection abort
 
 ```
@@ -135,7 +138,7 @@ Both prod and test:
 [Fri Mar 06 08:27:40 2015] [error] Software caused connection abort at /usr/local/dicty/www_dictybase/db/cgi-bin/search/search.pl line 66.\n
 ```
 
-### Analysis (by Sidd):
+###### Analysis (by Sidd):
 
 Okay by looking at the log up and down around the error you reported, it
 looks like a timeout, which is very much possible to happen in our
@@ -148,9 +151,56 @@ there was not database disconnection reported in the log. Otherwise, it
 might have aborted bunch of running writable transaction(means only
 having half of curation if it is running and getting kicked out in middle) that might cause data corruption which is very hard to detect and solve.
 
+---
+<a name="deletingcache"/>
+### Error deleting cache
 
-### Useful Commands:
+The option `Gene page cache` on `[Curator Central](http://dictybase.org/db/cgi-bin/dictyBase/curatorLogin)` allows to `delete cache`, and therefore, being able to visualize the new changes on the gene page.
+
+***Problem***. `Delete chache` outputs the following error (embedded in html code):
 
 ```
+Server error!
+
+The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there was an error in a CGI script.
+
+Error 500
+```
+
+###### Server `/var/log/apache2/error.log` information:
+
+```shell
+[Wed Apr 08 11:21:13 2015] [error] [client IP] (111)Connection refused: FastCGI: failed to connect to server "/tmp/cachemanager.fcgi": connect() failed, referer: http://dictybase.org/db/cgi-bin/dictyBase/curatorLogin?user=CGM_CHADO
+[Wed Apr 08 11:21:13 2015] [error] [client IP] FastCGI: incomplete headers (0 bytes) received from server "/tmp/cachemanager.fcgi", referer: http://dictybase.org/db/cgi-bin/dictyBase/curatorLogin?user=CGM_CHADO
+```
+<<<<<<< Updated upstream
 tail -n 6000 error.log |  less
 ```
+=======
+
+###### Apps/curation/log/development.log information
+
+```shell
+Wed Apr  8 09:46:49 2015 debug Curation::Utils:291 [6249]: 500 Internal Server Error
+Wed Apr  8 09:46:49 2015 debug Mojolicious::Plugin::RequestTimer:34 [6249]: 200 OK (1.384215s, 0.722/s).
+Wed Apr  8 09:46:51 2015 debug Mojolicious:187 [6248]: GET /curation/reference/14193 (Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:37.0) Gecko/20100101 Firefox/37.0).
+Wed Apr  8 09:46:51 2015 debug Mojolicious::Routes:406 [6248]: Dispatching Curation::Controller::Usersession->validate.
+Wed Apr  8 09:46:51 2015 debug Mojolicious::Routes:406 [6248]: Dispatching Curation::Controller::Reference->show.
+Wed Apr  8 09:46:51 2015 debug Mojolicious::Plugin::RequestTimer:34 [6248]: 200 OK (0.327978s, 3.049/s).
+```
+
+###### Diagnosis
+
+It's a `500 Internal Server Error` probably as consequence of the power outrage that we experienced recently. 
+
+###### Solucion
+
+Restart the cache app:
+
+```shell
+cd dictyBase/Apps/cachemanager/
+script/fcgi_backends.pl restart production.server
+```
+
+As a result, `Delete cache` now works!
+>>>>>>> Stashed changes
