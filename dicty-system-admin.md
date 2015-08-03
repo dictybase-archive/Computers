@@ -40,6 +40,25 @@ dicty-SYSTEM ADMINISTRATION
 - EST/contig/chromosome pages 
 - Colleague pages 
 
+#### Stock center autofill backend
+Go to project folder
+
+```
+$_> cd $HOME/dictyBase/Apps/stockcenter
+```
+
+Delete the existing pid(only in case of server restart)
+
+```
+$_> rm tmp/pids/unicorn.pid
+```
+
+Restart the app. Make sure you do not run it from a screen session, it tends to mess around with some env variables and the app refuses to restart
+```
+$_> RAILS_ENV=production script/unicorn_up
+```
+
+
 
 ## Multigenome server (http://genomes.dictybase.org)
 
