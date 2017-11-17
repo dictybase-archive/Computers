@@ -21,7 +21,7 @@ Restarting the unresponsive application works most of the cases.
 ### How to restart applications
 Login to dictybase production server via ssh and run the following shell
 commands as necessary. Preferably, restart the one that is unresponsive.   
-```shell
+```
 cd ~/dictyBase/Apps
 
 cd dictygene/
@@ -45,6 +45,6 @@ cd ~/dictyBase/Apps
 
 And for a blanket safety restart apache, it’s kind of a all in one solution
 generally.
-```shell
+```
 sudo /etc/init.d/apache2 reload
 ```
